@@ -1,0 +1,35 @@
+# CapitalQuant 3.0 — Dependencias
+
+# Core científico
+pandas>=2.0.0
+numpy>=1.26.0
+pyarrow>=14.0.0
+scipy>=1.11.0
+
+# Datos de mercado — MetaTrader 5 en Windows (ejecución real de órdenes +
+# datos), con caché SQLite compartida en market_data/cache_db.py
+                                                # `pip install -r requirements.txt` falla en Linux/Mac
+
+# Editor de código para el constructor de estrategias
+streamlit-ace>=0.1.1     # Editor con resaltado de sintaxis; si falla, la UI usa un textarea simple
+
+# Interfaz web
+streamlit>=1.38.0        # Requiere st.fragment(run_every=...), usado en "Mercado en Vivo"
+
+# Visualización
+plotly>=5.18.0
+
+# Optimización bayesiana
+optuna>=3.5.0
+
+# Paralelismo
+joblib>=1.3.0
+
+# Logging
+loguru>=0.7.2
+
+# Utilidades
+tqdm>=4.66.0
+
+# El Descubridor Genético (discovery/) no agrega dependencias nuevas:
+# reutiliza pandas/numpy/plotly/joblib ya listados arriba.

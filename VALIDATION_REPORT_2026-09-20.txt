@@ -1,0 +1,28 @@
+CAPITALQUANT — VALIDATION REPORT
+=================================
+
+Base: CapitalQuant ResearchLab 1.10
+Upgrade: Research/Data/Pine/Optimization workflow
+
+Validated:
+- Python AST parse: 116 Python files, 0 syntax errors.
+- Full pytest suite: 106 passed, 0 failed.
+- Research Lab supports ORIGINAL PUBLISHED and CLEAN PUBLISHED datasets.
+- Original dataset registry preserves rows exactly; no deduplication or gap deletion.
+- Optimization publishes an independent '<Strategy> Optimizada' variant without overwriting the original.
+- Research Lab automatic candidate filtering and ranking added.
+- Selected strategy export includes JSON + generated Python strategy + Pine Script v6.
+- Research Lab saved manifests now persist the strategy definition.
+- Pine generator tested across all 143 condition IDs exposed by the current discovery condition library: 0 unsupported IDs.
+- Pine export targets Pine Script v6.
+
+TradingView:
+- Current official documentation uses Pine Script v6.
+- Exported scripts include //@version=6.
+- TradingView broker-emulator behavior, costs, fills, margin and intrabar assumptions can differ from CapitalQuant; exported strategies must be revalidated in TradingView.
+
+Recommended experiment:
+- Development sample: 2020-01-01 -> 2025-12-31.
+- Keep 2026 as a separate out-of-sample/generalization period.
+- Run multiple assets and objectives.
+- Use the automatic filter to create a shortlist, then export the selected strategies.
